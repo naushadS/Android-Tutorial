@@ -16,19 +16,22 @@ import com.google.android.gms.ads.AdView;
 
 
 public class ListingMenu extends AppCompatActivity {
-    ListView lvListingMenu;
-    public String classes[]={"Starting Point","example1","example2","example3","example4",
+
+
+    public String classes[] = {"Incrementor/Decrementor", "[Web View] Android Police", "[Chrome Custom Tabs] Android Police", "example4",
             "example5","example6","example7","example8","example9","example10","example11",
             "example12","example13","example14","example15","example16","example17","example18",
             "example19","example20" +
             ""};
+    ListView lvListingMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listing_menu);
 
-        /* Loading the banner ad in listing menu*/
 
+        /* Loading the banner ad in listing menu*/
         AdView avListingMenu = (AdView) findViewById(R.id.avListingMenu);
         AdRequest adRequestListingMenu = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
@@ -36,16 +39,22 @@ public class ListingMenu extends AppCompatActivity {
                 .build();
         avListingMenu.loadAd(adRequestListingMenu);
 
-        //setListAdapter(new ArrayAdapter<String>(ListingMenu.this, android.R.layout.simple_list_item_1, classes));
+
+        /* Populating List View*/
         ArrayAdapter<String> naushadAdapter=new ArrayAdapter<String>(ListingMenu.this, android.R.layout.simple_list_item_1, classes);
         lvListingMenu = (ListView) findViewById(R.id.lvListingMenu);
         lvListingMenu.setAdapter(naushadAdapter);
+
+
+        /* OnItemClickListener for List Items*/
         lvListingMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String cheese=classes[position];
-                if(cheese=="Starting Point"){
+                if (cheese == "Incrementor/Decrementor") {
                     cheese="startingPoint";
+                } else if (cheese == "[WebView] Android Police") {
+                    cheese = "webView";
                 }
                 Class ourClass = null;
                 try {
@@ -57,8 +66,6 @@ public class ListingMenu extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     /*@Override
@@ -100,8 +107,6 @@ public class ListingMenu extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"You have pressed About!",Toast.LENGTH_SHORT).show();
             return true;
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 }

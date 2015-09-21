@@ -7,5 +7,8 @@
     <string name="banner_ad_unit_listing_menu_id">ca-app-pub-5900944845605827/1109844194</string>
     <string name="interstitial_ad_unit_starting_point_id">ca-app-pub-5900944845605827/3923709795</string>
     <string name="title_activity_listing_menu">List of Options</string>
-    <string name="title_activity_starting_point">Starting Point</string>
+    <string name="title_activity_starting_point">Incrementor/Decrementor</string>
+    <string name="webView_load_URL_title">Android Police</string>
+    <string name="webView_load_URL">http://www.androidpolice.com</string>
+
 </resources>

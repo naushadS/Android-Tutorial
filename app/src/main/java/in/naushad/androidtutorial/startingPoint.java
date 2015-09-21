@@ -48,7 +48,6 @@ public class startingPoint extends AppCompatActivity{
         });
 
 
-
         InterstitialAdsP = new InterstitialAd(this);
         InterstitialAdsP.setAdUnitId(getString(R.string.interstitial_ad_unit_starting_point_id));
 
