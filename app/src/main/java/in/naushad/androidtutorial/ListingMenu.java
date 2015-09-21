@@ -16,12 +16,13 @@ import com.google.android.gms.ads.AdView;
 
 
 public class ListingMenu extends AppCompatActivity {
-    ListView lvListingMenu;
-    public String classes[]={"Starting Point","example1","example2","example3","example4",
+    public String classes[] = {"Starting Point", "Load Android Police", "example2", "example3", "example4",
             "example5","example6","example7","example8","example9","example10","example11",
             "example12","example13","example14","example15","example16","example17","example18",
             "example19","example20" +
             ""};
+    ListView lvListingMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,8 @@ public class ListingMenu extends AppCompatActivity {
                 String cheese=classes[position];
                 if(cheese=="Starting Point"){
                     cheese="startingPoint";
+                } else if (cheese == "Load Android Police") {
+                    cheese = "webView";
                 }
                 Class ourClass = null;
                 try {
@@ -100,8 +103,6 @@ public class ListingMenu extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"You have pressed About!",Toast.LENGTH_SHORT).show();
             return true;
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 }
