@@ -27,6 +27,7 @@ public class Splash extends Activity{
                 } finally{
                     Intent openListingMenu=new Intent("in.naushad.androidtutorial.LISTINGMENU");
                   startActivity(openListingMenu);
+
                 }
             }
         };
@@ -36,6 +37,7 @@ public class Splash extends Activity{
     @Override
     protected void onPause() {
         super.onPause();
+
         ourSong.release();
         finish();
     }

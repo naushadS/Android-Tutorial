@@ -10,5 +10,19 @@
     <string name="title_activity_starting_point">Incrementor/Decrementor</string>
     <string name="webView_load_URL_title">Android Police</string>
     <string name="webView_load_URL">http://www.androidpolice.com</string>
+    <string name="title_activity_chrome_custom_tabs">Chrome Custom Tab</string>
+    <string name="title_activity_chrome_custom_tab">chromeCustomTabActivity</string>
+    <string name="title_activity_web_view_cctalternative">webViewCCTalternative</string>
+    <string name="menu_title_share">Share</string>
+    <string name="menu_title_email">Email the Dev!</string>
+
+    <string name="text_launch_custom_tab">Launch WebSite</string>
+
+    <string name="text_toolbar_colored">Toolbar colored</string>
+    <string name="text_title_displayed">Title displayed</string>
+    <string name="text_back_arrow_displayed">Back Arrow displayed</string>
+    <string name="text_actionbar_icon_displayed">Actionbar icon</string>
+    <string name="text_menu_items_displayed">Menu items</string>
+    <string name="text_custom_animations">Custom animations</string>
 
 </resources>

@@ -23,7 +23,7 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
 
-        <!-- SPLASH SCREEN ACTIVITY-->
+        <!-- SPLASH SCREEN ACTIVITY -->
         <activity
             android:name=".Splash"
             android:label="@string/app_name" >
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
 
-        <!-- LISTING MENU ACTIVITY-->
+        <!-- LISTING MENU ACTIVITY -->
         <activity
             android:name=".ListingMenu"
             android:label="@string/title_activity_listing_menu" >
@@ -45,21 +45,22 @@
             </intent-filter>
         </activity>
 
-        <!-- STARTING POINT ACTIVITY-->
+        <!-- STARTING POINT ACTIVITY -->
         <activity
             android:name=".startingPoint"
-            android:label="@string/title_activity_starting_point" >
+            android:label="@string/title_activity_starting_point">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.STARTINGPOINT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
         </activity>
 
-        <!-- WEBVIEW ACTIVITY-->
+        <!-- WEBVIEW ACTIVITY -->
         <activity
             android:name=".webView"
-            android:label="@string/webView_load_URL_title">
+            android:label="Android Police (WebView)">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.WEBVIEW" />
 
@@ -67,6 +68,25 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".chromeCustomTabActivity"
+            android:label="Android Police (Chrome Custom Tab)">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.CHROMECUSTOMTABACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".webViewCCTalternative"
+            android:label="@string/title_activity_web_view_cctalternative">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.WEBVIEWCCTALTERNATIVE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
