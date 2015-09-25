@@ -18,7 +18,7 @@ import com.google.android.gms.ads.AdView;
 public class ListingMenu extends AppCompatActivity {
 
 
-    public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)", "example4",
+    public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)", "TextPlay",
             "example5","example6","example7","example8","example9","example10","example11",
             "example12","example13","example14","example15","example16","example17","example18",
             "example19","example20" +
