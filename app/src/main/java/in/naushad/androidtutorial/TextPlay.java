@@ -11,22 +11,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import java.util.Random;
+
 /**
  * Created by Naushad on 25-Sep-15.
  */
-public class TextPlay extends AppCompatActivity {
+public class TextPlay extends AppCompatActivity implements View.OnClickListener {
 
     EditText etCommand;
     Button bResults;
     ToggleButton tbPassword;
     TextView tvResults;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.textplay);
         bindXMLView();
-        onClickListeners();
+        tbPassword.setOnClickListener(this);
+        bResults.setOnClickListener(this);
     }
 
 
@@ -35,25 +39,21 @@ public class TextPlay extends AppCompatActivity {
         bResults = (Button) findViewById(R.id.bResults);
         tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
         tvResults = (TextView) findViewById(R.id.tvResults);
-
     }
 
-    private void onClickListeners() {
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
 
-        tbPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.tbPassword:
                 if (tbPassword.isChecked()) {
                     etCommand.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 } else {
                     etCommand.setInputType(InputType.TYPE_CLASS_TEXT);
                 }
-            }
-        });
+                break;
 
-        bResults.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.bResults:
                 String mac = etCommand.getText().toString();
                 tvResults.setText(mac);
 
@@ -65,15 +65,31 @@ public class TextPlay extends AppCompatActivity {
                     tvResults.setGravity(Gravity.CENTER);
                 } else if (mac.contentEquals("blue")) {
                     tvResults.setTextColor(Color.BLUE);
-                } else if (mac.contentEquals("WTF")) {
+                } else if (mac.contentEquals("crazy")) {
+                    Random crazy = new Random();
+                    tvResults.setTextSize(crazy.nextInt(75));
+                    tvResults.setTextColor(Color.rgb(crazy.nextInt(265), crazy.nextInt(265), crazy.nextInt(265)));
+                    switch (crazy.nextInt(3)) {
+                        case 0:
+                            tvResults.setGravity(Gravity.LEFT);
+                            break;
+                        case 1:
+                            tvResults.setGravity(Gravity.RIGHT);
+                            break;
+                        case 2:
+                            tvResults.setGravity(Gravity.CENTER);
+                            break;
+
+                    }
 
                 } else {
                     tvResults.setText("Invalid");
                     tvResults.setGravity(Gravity.CENTER);
                 }
 
-            }
-        });
+                break;
+        }
 
     }
+
 }
