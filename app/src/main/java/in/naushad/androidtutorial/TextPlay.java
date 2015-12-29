@@ -86,7 +86,6 @@ public class TextPlay extends AppCompatActivity implements View.OnClickListener 
                     tvResults.setText("Invalid");
                     tvResults.setGravity(Gravity.CENTER);
                 }
-
                 break;
         }
 
