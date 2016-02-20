@@ -11,6 +11,9 @@
     <!-- External storage write permission -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <!-- For downloading images via internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -128,7 +131,7 @@
             </intent-filter>
         </activity>
 
-        <!-- picassoLibrary ACTIVITY-->
+        <!-- picassoLibrary ACTIVITY -->
         <activity
             android:name=".picassoLibrary"
             android:label="Picasso is DOPE!">
@@ -137,7 +140,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
     </application>
 

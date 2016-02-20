@@ -30,4 +30,7 @@ dependencies {
     compile 'com.android.support:customtabs:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile('com.mikepenz:materialdrawer:5.0.0@aar') {
+        transitive = true
+    }
 }

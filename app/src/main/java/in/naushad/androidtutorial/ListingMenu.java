@@ -13,6 +13,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 
 
 public class ListingMenu extends AppCompatActivity {
@@ -29,6 +34,20 @@ public class ListingMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listing_menu);
+
+        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withName("item 1 test");
+        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withName("item 2 test");
+
+        Drawer result = new DrawerBuilder()
+                .withActivity(this)
+                        //.withToolbar(toolbar)
+                .addDrawerItems(
+                        item1
+                        ,new DividerDrawerItem()
+                        ,item2
+                        ,new SecondaryDrawerItem().withName("Secondary draver item")
+                )
+                .build();
 
 
         // Loading the banner ad in listing menu
@@ -74,7 +93,7 @@ public class ListingMenu extends AppCompatActivity {
                         break;
                     case "Picasso Library":
                         cheese = "picassoLibrary";
-                    break;
+                        break;
                 }
 
                 //redirecting the registered click by user to the appropriate class
