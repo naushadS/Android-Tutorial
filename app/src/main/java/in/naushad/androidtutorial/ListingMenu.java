@@ -13,10 +13,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.mikepenz.materialdrawer.AccountHeader;
+import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 
 
@@ -37,17 +40,37 @@ public class ListingMenu extends AppCompatActivity {
 
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withName("item 1 test");
         SecondaryDrawerItem item2 = new SecondaryDrawerItem().withName("item 2 test");
-
-        Drawer result = new DrawerBuilder()
+        AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                        //.withToolbar(toolbar)
-                .addDrawerItems(
-                        item1
-                        ,new DividerDrawerItem()
-                        ,item2
-                        ,new SecondaryDrawerItem().withName("Secondary draver item")
+                .withHeaderBackground(R.drawable.header)
+                .addProfiles(
+                        new ProfileDrawerItem()
+                                .withName("Naushad Shukoor")
+                                .withEmail("naushadshukoor@gmail.com")
+                                .withIcon(getResources().getDrawable(R.drawable.profile3))
+                )
+                .addProfiles(
+                        new ProfileDrawerItem()
+                                .withName("Bruce Wayne")
+                                .withEmail("brucewayne@gmail.com")
+                                .withIcon(getResources().getDrawable(R.drawable.profile3))
                 )
                 .build();
+        Drawer result = new DrawerBuilder()
+                .withActivity(this)
+                .withTranslucentStatusBar(false)
+                .withTranslucentNavigationBar(false)
+                .withFullscreen(false)
+                .withAccountHeader(headerResult)
+                .addDrawerItems(
+                        item1
+                        , new DividerDrawerItem()
+                        , item2
+                        , new SecondaryDrawerItem().withName("Secondary drawer item")
+                )
+                .build();
+
+
 
 
         // Loading the banner ad in listing menu
