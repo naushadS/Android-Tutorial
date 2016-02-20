@@ -18,11 +18,11 @@ import com.google.android.gms.ads.AdView;
 public class ListingMenu extends AppCompatActivity {
 
 
-    public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)", "TextPlay",
-            "example5","example6","example7","example8","example9","example10","example11",
-            "example12","example13","example14","example15","example16","example17","example18",
-            "example19","example20" +
-            ""};
+    public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)",
+            "Text Play", "Image Capture","Change Layout Background","example7","example8",
+            "example9","example10","example11","example12","example13",
+            "example14","example15","example16","example17","example18",
+            "example19","example20"};
     ListView lvListingMenu;
 
     @Override
@@ -31,7 +31,7 @@ public class ListingMenu extends AppCompatActivity {
         setContentView(R.layout.activity_listing_menu);
 
 
-        /* Loading the banner ad in listing menu*/
+        // Loading the banner ad in listing menu
         AdView avListingMenu = (AdView) findViewById(R.id.avListingMenu);
         AdRequest adRequestListingMenu = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
@@ -40,24 +40,41 @@ public class ListingMenu extends AppCompatActivity {
         avListingMenu.loadAd(adRequestListingMenu);
 
 
-        /* Populating List View*/
+        // Populating List View
         ArrayAdapter<String> naushadAdapter=new ArrayAdapter<String>(ListingMenu.this, android.R.layout.simple_list_item_1, classes);
         lvListingMenu = (ListView) findViewById(R.id.lvListingMenu);
         lvListingMenu.setAdapter(naushadAdapter);
 
 
-        /* OnItemClickListener for List Items*/
+        // OnItemClickListener for List Items
         lvListingMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String cheese=classes[position];
-                if (cheese == "Incrementor/Decrementor") {
-                    cheese="startingPoint";
-                } else if (cheese == "Android Police (Web View)") {
-                    cheese = "webView";
-                } else if (cheese == "Android Police (Chrome Custom Tab)") {
-                    cheese = "chromeCustomTabActivity";
+
+                //converting display name to class name
+                switch (cheese){
+                    case "Incrementor/Decrementor":
+                        cheese="startingPoint";
+                        break;
+                    case "Android Police (Web View)":
+                        cheese = "webView";
+                        break;
+                    case "Android Police (Chrome Custom Tab)":
+                        cheese = "chromeCustomTabActivity";
+                        break;
+                    case "Text Play":
+                        cheese = "TextPlay";
+                        break;
+                    case "Image Capture":
+                        cheese = "camera";
+                        break;
+                    case "Change Layout Background":
+                        cheese = "changeBackground";
+                        break;
                 }
+
+                //redirecting the registered click by user to the appropriate class
                 Class ourClass = null;
                 try {
                     ourClass = Class.forName("in.naushad.androidtutorial."+cheese);
@@ -69,22 +86,6 @@ public class ListingMenu extends AppCompatActivity {
             }
         });
     }
-
-    /*@Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-        String cheese=classes[position];
-        Class ourClass = null;
-        try {
-            ourClass = Class.forName("in.naushad.androidtutorial."+cheese);
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            Intent ourIntent = new Intent(ListingMenu.this,ourClass);
-            startActivity(ourIntent);
-        }
-    } */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -16,7 +16,7 @@ import java.util.Random;
 /**
  * Created by Naushad on 25-Sep-15.
  */
-public class TextPlay extends AppCompatActivity implements View.OnClickListener {
+public class TextPlay extends AppCompatActivity implements View.OnClickListener{
 
     EditText etCommand;
     Button bResults;

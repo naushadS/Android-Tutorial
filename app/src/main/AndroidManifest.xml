@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.naushad.androidtutorial" >
+    package="in.naushad.androidtutorial">
+
 
     <!-- Include required permissions for Google Mobile Ads to run -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- Camera2 feature usage -->
+    <uses-feature android:name="android.hardware.camera2" />
+    <!-- External storage write permission -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
 
         <!-- This meta-data tag is required to use Google Play Services. -->
         <meta-data
@@ -26,7 +32,7 @@
         <!-- SPLASH SCREEN ACTIVITY -->
         <activity
             android:name=".Splash"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +43,7 @@
         <!-- LISTING MENU ACTIVITY -->
         <activity
             android:name=".ListingMenu"
-            android:label="@string/title_activity_listing_menu" >
+            android:label="@string/title_activity_listing_menu">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.LISTINGMENU" />
 
@@ -54,7 +60,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
 
         <!-- WEBVIEW ACTIVITY -->
@@ -63,11 +68,11 @@
             android:label="Android Police (WebView)">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.WEBVIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
+        <!-- Chrome Custom Tab ACTIVITY -->
         <activity
             android:name=".chromeCustomTabActivity"
             android:label="Android Police (Chrome Custom Tab)">
@@ -78,6 +83,7 @@
             </intent-filter>
         </activity>
 
+        <!-- WEBVIEW-fallback ACTIVITY -->
         <activity
             android:name=".webViewCCTalternative"
             android:label="@string/title_activity_web_view_cctalternative">
@@ -87,9 +93,38 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!-- Text Play ACTIVITY -->
         <activity
             android:name=".TextPlay"
-            android:label="Text Play"></activity>
+            android:label="Text Play" >
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.TEXTPLAY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            </activity>
+
+        <!-- Image Capture ACTIVITY -->
+        <activity
+            android:name=".camera"
+            android:label="Village Empowerment"
+            android:windowSoftInputMode="stateHidden">
+        <intent-filter>
+            <action android:name="in.naushad.androidtutorial.CAMERA" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+        <!-- Change Background ACTIVITY -->
+        <activity
+            android:name=".changeBackground"
+            android:label="CSI Android Task">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.CHANGEBACKGROUND" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
