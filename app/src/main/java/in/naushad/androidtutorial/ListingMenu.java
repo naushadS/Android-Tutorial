@@ -19,7 +19,7 @@ public class ListingMenu extends AppCompatActivity {
 
 
     public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)",
-            "Text Play", "Image Capture","Change Layout Background","example7","example8",
+            "Text Play", "Image Capture","Change Layout Background","Picasso Library","example8",
             "example9","example10","example11","example12","example13",
             "example14","example15","example16","example17","example18",
             "example19","example20"};
@@ -72,6 +72,9 @@ public class ListingMenu extends AppCompatActivity {
                     case "Change Layout Background":
                         cheese = "changeBackground";
                         break;
+                    case "Picasso Library":
+                        cheese = "picassoLibrary";
+                    break;
                 }
 
                 //redirecting the registered click by user to the appropriate class

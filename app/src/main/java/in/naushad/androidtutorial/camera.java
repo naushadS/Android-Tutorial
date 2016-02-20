@@ -2,7 +2,6 @@ package in.naushad.androidtutorial;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 
@@ -98,7 +99,16 @@ public class camera extends AppCompatActivity {
             default:
                 break;
         }
-        imageView.setImageDrawable(Drawable.createFromPath(path));
+
+        Picasso.with(this).setIndicatorsEnabled(true);
+
+        /* using Picasso */
+        Picasso.with(this)
+                .load(new File(path))
+                .into(imageView);
+
+        /* Using Generic way */
+        //imageView.setImageDrawable(Drawable.createFromPath(path));
         updateListOfImages();
     }
 }
