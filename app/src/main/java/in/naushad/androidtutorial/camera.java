@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +28,7 @@ public class camera extends AppCompatActivity {
     private TextView tvListOfFiles;
     public String fileName;
     private ImageView imageView;
+    private Toolbar tbCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,13 @@ public class camera extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
 
         bindXML();
+
+        setSupportActionBar(tbCamera);
+        getSupportActionBar().setTitle("Village Empowerment (Module)");
+        getSupportActionBar().setSubtitle("Created as a part of BitCamp");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +63,7 @@ public class camera extends AppCompatActivity {
     }
 
     private void bindXML() {
+        tbCamera = (Toolbar) findViewById(R.id.tbCamera);
         button = (Button) findViewById(R.id.btn_capture_image);
         imageView = (ImageView) findViewById(R.id.iv_captured_image);
         editText = (EditText) findViewById(R.id.et_fileName);
@@ -111,5 +122,18 @@ public class camera extends AppCompatActivity {
         //imageView.setImageDrawable(Drawable.createFromPath(path));
         updateListOfImages();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //handle the click on the back arrow click
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
 

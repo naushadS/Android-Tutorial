@@ -3,8 +3,10 @@ package in.naushad.androidtutorial;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import java.util.Random;
  */
 public class TextPlay extends AppCompatActivity implements View.OnClickListener{
 
+    private Toolbar tbTextPlay;
     EditText etCommand;
     Button bResults;
     ToggleButton tbPassword;
@@ -28,13 +31,22 @@ public class TextPlay extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.textplay);
+
         bindXMLView();
+
+        setSupportActionBar(tbTextPlay);
+        getSupportActionBar().setTitle("Text Play");
+        getSupportActionBar().setSubtitle("hint:type - crazy");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
+
         tbPassword.setOnClickListener(this);
         bResults.setOnClickListener(this);
     }
 
 
     private void bindXMLView() {
+        tbTextPlay = (Toolbar) findViewById(R.id.tbTextPlay);
         etCommand = (EditText) findViewById(R.id.etCommand);
         bResults = (Button) findViewById(R.id.bResults);
         tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
@@ -90,5 +102,18 @@ public class TextPlay extends AppCompatActivity implements View.OnClickListener{
         }
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //handle the click on the back arrow click
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 }

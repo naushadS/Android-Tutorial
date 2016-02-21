@@ -56,7 +56,7 @@
         <!-- STARTING POINT ACTIVITY -->
         <activity
             android:name=".startingPoint"
-            android:label="@string/title_activity_starting_point">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.STARTINGPOINT" />
 
@@ -67,7 +67,7 @@
         <!-- WEBVIEW ACTIVITY -->
         <activity
             android:name=".webView"
-            android:label="Android Police (WebView)">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.WEBVIEW" />
 
@@ -78,7 +78,7 @@
         <!-- Chrome Custom Tab ACTIVITY -->
         <activity
             android:name=".chromeCustomTabActivity"
-            android:label="Android Police (Chrome Custom Tab)">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.CHROMECUSTOMTABACTIVITY" />
 
@@ -100,7 +100,7 @@
         <!-- Text Play ACTIVITY -->
         <activity
             android:name=".TextPlay"
-            android:label="Text Play">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.TEXTPLAY" />
 
@@ -111,7 +111,7 @@
         <!-- Image Capture ACTIVITY -->
         <activity
             android:name=".camera"
-            android:label="Village Empowerment"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.CAMERA" />
@@ -123,7 +123,7 @@
         <!-- Change Background ACTIVITY -->
         <activity
             android:name=".changeBackground"
-            android:label="CSI Android Task">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.CHANGEBACKGROUND" />
 
@@ -146,7 +146,7 @@
         <!-- Email Dev ACTIVITY -->
         <activity
             android:name=".Email_Dev"
-            android:label="Email The Developer!">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.EMAIL_DEV" />
 

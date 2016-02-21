@@ -2,12 +2,11 @@ package in.naushad.androidtutorial;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -16,6 +15,7 @@ import com.google.android.gms.ads.InterstitialAd;
 public class startingPoint extends AppCompatActivity{
     TextView tvDisplay;
     Button bAdd, bSub;
+    Toolbar tbStartingPoint;
     int counter;
 
     private InterstitialAd InterstitialAdsP;
@@ -26,9 +26,16 @@ public class startingPoint extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starting_point);
 
+        tbStartingPoint = (Toolbar) findViewById(R.id.tbStartingPoint);
         tvDisplay = (TextView) findViewById(R.id.tvDisplay);
         bAdd = (Button) findViewById(R.id.bAdd);
         bSub = (Button) findViewById(R.id.bSub);
+
+        setSupportActionBar(tbStartingPoint);
+        getSupportActionBar().setTitle("Incrementor/Decrementor");
+        getSupportActionBar().setSubtitle("Really Tough Logic :P");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
 
         counter = 0;
         bAdd.setOnClickListener(new View.OnClickListener() {
@@ -84,26 +91,18 @@ public class startingPoint extends AppCompatActivity{
         InterstitialAdsP.loadAd(adRequest);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_starting_point, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast.makeText(getApplicationContext(), "You have pressed Settings!", Toast.LENGTH_SHORT).show();
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,12 +16,21 @@ public class Email_Dev extends AppCompatActivity {
     EditText etEmailAddressCC,etIntroduction,etImprovements,etNewFeature;
     Button btSendMail;
     String EmailAddressCC,Introduction,Improvements,NewFeature;
+    private Toolbar tbEmailDev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email__dev);
+
         bindXML();
+
+        setSupportActionBar(tbEmailDev);
+        getSupportActionBar().setTitle("Email the Developer!");
+        getSupportActionBar().setSubtitle("Call it a Fan-Mail :p");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
+
         Toast.makeText(getApplicationContext(),"Tell the developer what you think about this app!",Toast.LENGTH_LONG).show();
         btSendMail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +64,7 @@ public class Email_Dev extends AppCompatActivity {
     }
 
     private void bindXML(){
+        tbEmailDev = (Toolbar) findViewById(R.id.tbEmailDev);
         etEmailAddressCC = (EditText) findViewById(R.id.etEmailAddressCC);
         etIntroduction = (EditText) findViewById(R.id.etIntroduction);
         etImprovements = (EditText) findViewById(R.id.etImprovements);
@@ -65,5 +77,17 @@ public class Email_Dev extends AppCompatActivity {
         Introduction = etIntroduction.getText().toString();
         Improvements = etImprovements.getText().toString();
         NewFeature = etNewFeature.getText().toString();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //handle the click on the back arrow click
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

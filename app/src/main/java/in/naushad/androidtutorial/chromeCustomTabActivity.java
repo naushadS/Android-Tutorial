@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,6 +26,7 @@ public class chromeCustomTabActivity extends AppCompatActivity {
     private Bitmap mActionButtonBitmap;
     private Bitmap mCloseButtonBitmap;
     private CustomTabActivityHelper mCustomTabActivityHelper;
+    private Toolbar tbChromeCustomTab;
     /***
      * Use this method to make UI changes
      */
@@ -43,7 +46,16 @@ public class chromeCustomTabActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chrome_custom_tab);
+
         bindXMLView();
+
+
+        setSupportActionBar(tbChromeCustomTab);
+        getSupportActionBar().setTitle("Chrome Custom Tab");
+        getSupportActionBar().setSubtitle("Loading/ed Android Police");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
+
         setupCustomTabHelper();
         decodeBitmaps(this);
 
@@ -56,6 +68,7 @@ public class chromeCustomTabActivity extends AppCompatActivity {
     }
 
     private void bindXMLView() {
+        tbChromeCustomTab = (Toolbar) findViewById(R.id.tbChromeCustomTab);
         mColorToolbarCheck = (CheckBox) findViewById(R.id.check_color_toolbar);
         mShowTitleCheck = (CheckBox) findViewById(R.id.check_show_title);
         mCloseIconCheck = (CheckBox) findViewById(R.id.check_close_icon);
@@ -143,4 +156,15 @@ public class chromeCustomTabActivity extends AppCompatActivity {
         return PendingIntent.getActivity(getApplicationContext(), 0, actionIntent, 0);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //handle the click on the back arrow click
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

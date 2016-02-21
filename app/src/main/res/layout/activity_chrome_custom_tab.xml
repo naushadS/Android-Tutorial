@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
-
+-->
     <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+    tools:context="in.naushad.androidtutorial.chromeCustomTabActivity">
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tbChromeCustomTab"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            app:theme="@style/ToolBarStyle"
+            />
 
         <TextView
             android:id="@+id/text_color_toolbar"
             style="@style/TextOptionsListStyle"
             android:layout_alignBaseline="@+id/check_color_toolbar"
             android:layout_toLeftOf="@+id/check_color_toolbar"
-            android:text="@string/text_toolbar_colored" />
+            android:layout_below="@id/tbChromeCustomTab"
+            android:text="@string/text_toolbar_colored"
+            android:layout_marginTop="20dp"/>
 
         <CheckBox
             android:id="@+id/check_color_toolbar"
-            style="@style/CheckBoxStyle" />
+            style="@style/CheckBoxStyle"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/tbChromeCustomTab"/>
 
         <TextView
             android:id="@+id/text_show_title"
@@ -98,5 +117,3 @@
             android:text="@string/text_launch_custom_tab" />
 
     </RelativeLayout>
-
-</LinearLayout>
