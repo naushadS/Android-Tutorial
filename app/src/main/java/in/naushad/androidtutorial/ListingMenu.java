@@ -1,6 +1,7 @@
 package in.naushad.androidtutorial;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -16,6 +17,7 @@ import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.holder.BadgeStyle;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
@@ -63,10 +65,15 @@ public class ListingMenu extends AppCompatActivity {
                 .withTranslucentStatusBar(false)
                 .withTranslucentNavigationBar(false)
                 .withFullscreen(false)
+                .withSelectedItem(-1)
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
                         new PrimaryDrawerItem()
+                                .withIcon(R.drawable.email)
                                 .withName("Email the Developer!")
+                                .withDescription("Send a pre-formatted mail")
+                                .withBadge("1")
+                                .withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.Black))
                                 .withIdentifier(1)
                                 .withSelectable(false)
 

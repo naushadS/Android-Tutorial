@@ -2,6 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="in.naushad.androidtutorial.ListingMenu">
-    <item android:id="@+id/action_email_dev" android:title="Email Dev!"
+    <item android:id="@+id/action_email_dev" android:title="Email the Dev!"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
