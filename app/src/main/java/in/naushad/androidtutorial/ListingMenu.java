@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -27,7 +26,7 @@ public class ListingMenu extends AppCompatActivity {
 
 
     public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)",
-            "Text Play", "Image Capture","Change Layout Background","Picasso Library","example8",
+            "Text Play", "Image Capture","Change Layout Background","Picasso Library","Email the Developer!",
             "example9","example10","example11","example12","example13",
             "example14","example15","example16","example17","example18",
             "example19","example20"};
@@ -117,6 +116,9 @@ public class ListingMenu extends AppCompatActivity {
                     case "Picasso Library":
                         cheese = "picassoLibrary";
                         break;
+                    case "Email the Developer!":
+                        cheese = "Email_Dev";
+                        break;
                 }
 
                 //redirecting the registered click by user to the appropriate class
@@ -147,12 +149,9 @@ public class ListingMenu extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast.makeText(getApplicationContext(),"You have pressed Settings!",Toast.LENGTH_SHORT).show();
-            return true;
-        }
-        if (id == R.id.action_About) {
-            Toast.makeText(getApplicationContext(),"You have pressed About!",Toast.LENGTH_SHORT).show();
+        if (id == R.id.action_email_dev) {
+            Intent emaildevintent = new Intent(ListingMenu.this,Email_Dev.class);
+            startActivity(emaildevintent);
             return true;
         }
         return super.onOptionsItemSelected(item);

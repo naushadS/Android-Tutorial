@@ -141,6 +141,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!-- Email Dev ACTIVITY -->
+        <activity
+            android:name=".Email_Dev"
+            android:label="Email The Developer!">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.EMAIL_DEV" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="in.naushad.androidtutorial.Email_Dev">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        >
+        <EditText
+            android:id="@+id/etEmailAddressCC"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Email Address CC's (your email?)"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:inputType="textEmailAddress"
+
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp">
+
+        <EditText
+            android:id="@+id/etIntroduction"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Introduction"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:inputType="text"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp">
+
+        <EditText
+            android:id="@+id/etImprovements"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Improvements"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:inputType="text"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp">
+
+        <EditText
+            android:id="@+id/etNewFeature"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="New feature to be implemented"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:inputType="text"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btSendEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Mail"
+        />
+</LinearLayout>
