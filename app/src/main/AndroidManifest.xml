@@ -45,7 +45,7 @@
         <!-- LISTING MENU ACTIVITY -->
         <activity
             android:name=".ListingMenu"
-            android:label="@string/title_activity_listing_menu">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.LISTINGMENU" />
 
@@ -134,7 +134,8 @@
         <!-- picassoLibrary ACTIVITY -->
         <activity
             android:name=".picassoLibrary"
-            android:label="Picasso is DOPE!">
+            android:theme="@style/AppTheme.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.PICASSOLIBRARY" />
 
