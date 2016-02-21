@@ -16,10 +16,9 @@ import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 
 public class ListingMenu extends AppCompatActivity {
@@ -31,15 +30,17 @@ public class ListingMenu extends AppCompatActivity {
             "example14","example15","example16","example17","example18",
             "example19","example20"};
     ListView lvListingMenu;
+    private Intent drawerintent=null;
+    private Drawer result=null;
+    private AccountHeader headerResult=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listing_menu);
 
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withName("item 1 test");
-        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withName("item 2 test");
-        AccountHeader headerResult = new AccountHeaderBuilder()
+        //Account Header for Material Drawer
+        headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header)
                 .addProfiles(
@@ -55,83 +56,109 @@ public class ListingMenu extends AppCompatActivity {
                                 .withIcon(getResources().getDrawable(R.drawable.profile3))
                 )
                 .build();
-        Drawer result = new DrawerBuilder()
+
+         //Material Drawer for listing menu activity
+                 result = new DrawerBuilder()
                 .withActivity(this)
                 .withTranslucentStatusBar(false)
                 .withTranslucentNavigationBar(false)
                 .withFullscreen(false)
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
-                        item1
-                        , new DividerDrawerItem()
-                        , item2
-                        , new SecondaryDrawerItem().withName("Secondary drawer item")
+                        new PrimaryDrawerItem()
+                                .withName("Email the Developer!")
+                                .withIdentifier(1)
+                                .withSelectable(false)
+
                 )
-                .build();
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                        if (drawerItem != null) {
+                            drawerintent = null;
+                        }
+                        if (drawerItem.getIdentifier() == 1) {
+                            drawerintent = new Intent(ListingMenu.this, Email_Dev.class);
+                        }
+                        if (drawerintent != null) {
+                            startActivity(drawerintent);
+                        }
+                        return false;
+                    }
+                })
+                         .build();
 
 
+                        // Loading the banner ad in listing menu
+                        AdView avListingMenu = (AdView) findViewById(R.id.avListingMenu);
+                        AdRequest adRequestListingMenu = new AdRequest.Builder()
+                                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
+                                .addTestDevice("A851D03B6D976CAA2BDAABFC232841DC")  // My Xiaomi Redmi 1s test phone
+                                .build();
+                        avListingMenu.loadAd(adRequestListingMenu);
 
 
-        // Loading the banner ad in listing menu
-        AdView avListingMenu = (AdView) findViewById(R.id.avListingMenu);
-        AdRequest adRequestListingMenu = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
-                .addTestDevice("A851D03B6D976CAA2BDAABFC232841DC")  // My Xiaomi Redmi 1s test phone
-                .build();
-        avListingMenu.loadAd(adRequestListingMenu);
+                        // Populating List View
+                        ArrayAdapter<String> naushadAdapter = new ArrayAdapter<String>(ListingMenu.this, android.R.layout.simple_list_item_1, classes);
+                        lvListingMenu = (ListView) findViewById(R.id.lvListingMenu);
+                        lvListingMenu.setAdapter(naushadAdapter);
 
 
-        // Populating List View
-        ArrayAdapter<String> naushadAdapter=new ArrayAdapter<String>(ListingMenu.this, android.R.layout.simple_list_item_1, classes);
-        lvListingMenu = (ListView) findViewById(R.id.lvListingMenu);
-        lvListingMenu.setAdapter(naushadAdapter);
+                        // OnItemClickListener for List Items
+                        lvListingMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                String cheese = classes[position];
 
+                                //converting display name to class name
+                                switch (cheese) {
+                                    case "Incrementor/Decrementor":
+                                        cheese = "startingPoint";
+                                        break;
+                                    case "Android Police (Web View)":
+                                        cheese = "webView";
+                                        break;
+                                    case "Android Police (Chrome Custom Tab)":
+                                        cheese = "chromeCustomTabActivity";
+                                        break;
+                                    case "Text Play":
+                                        cheese = "TextPlay";
+                                        break;
+                                    case "Image Capture":
+                                        cheese = "camera";
+                                        break;
+                                    case "Change Layout Background":
+                                        cheese = "changeBackground";
+                                        break;
+                                    case "Picasso Library":
+                                        cheese = "picassoLibrary";
+                                        break;
+                                    case "Email the Developer!":
+                                        cheese = "Email_Dev";
+                                        break;
+                                }
 
-        // OnItemClickListener for List Items
-        lvListingMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String cheese=classes[position];
-
-                //converting display name to class name
-                switch (cheese){
-                    case "Incrementor/Decrementor":
-                        cheese="startingPoint";
-                        break;
-                    case "Android Police (Web View)":
-                        cheese = "webView";
-                        break;
-                    case "Android Police (Chrome Custom Tab)":
-                        cheese = "chromeCustomTabActivity";
-                        break;
-                    case "Text Play":
-                        cheese = "TextPlay";
-                        break;
-                    case "Image Capture":
-                        cheese = "camera";
-                        break;
-                    case "Change Layout Background":
-                        cheese = "changeBackground";
-                        break;
-                    case "Picasso Library":
-                        cheese = "picassoLibrary";
-                        break;
-                    case "Email the Developer!":
-                        cheese = "Email_Dev";
-                        break;
-                }
-
-                //redirecting the registered click by user to the appropriate class
-                Class ourClass = null;
-                try {
-                    ourClass = Class.forName("in.naushad.androidtutorial."+cheese);
-                    Intent ourIntent = new Intent(ListingMenu.this,ourClass);
-                    startActivity(ourIntent);
-                } catch(ClassNotFoundException e) {
+                                //redirecting the registered click by user to the appropriate class
+                                Class ourClass = null;
+                                try {
+                                    ourClass = Class.forName("in.naushad.androidtutorial." + cheese);
+                                    Intent ourIntent = new Intent(ListingMenu.this, ourClass);
+                                    startActivity(ourIntent);
+                                } catch(ClassNotFoundException e) {
                     e.printStackTrace();
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        //handle the back press :D close the drawer first and if the drawer is closed close the activity
+        if (result != null && result.isDrawerOpen()) {
+            result.closeDrawer();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -140,6 +167,7 @@ public class ListingMenu extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_listing_menu, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
