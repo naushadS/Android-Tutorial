@@ -18,16 +18,17 @@ public class picassoLibrary extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_picasso_library);
-        tbPicasso = (Toolbar) findViewById(R.id.tbPicasso);
-        tvPicassoDesc=(TextView)findViewById(R.id.tvPicassoDesc);
+
+        bindXML();
+
         setSupportActionBar(tbPicasso);
         getSupportActionBar().setTitle("Picasso (Library)");
         getSupportActionBar().setSubtitle("Image Loading & Caching");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
 
-        ivPicasso1 = (ImageView) findViewById(R.id.ivPicasso1);
 
         Picasso.
                 with(this).setIndicatorsEnabled(true);
@@ -48,6 +49,12 @@ public class picassoLibrary extends AppCompatActivity{
 
 
 
+    }
+
+    private  void bindXML(){
+        tbPicasso = (Toolbar) findViewById(R.id.tbPicasso);
+        ivPicasso1 = (ImageView) findViewById(R.id.ivPicasso1);
+        tvPicassoDesc=(TextView)findViewById(R.id.tvPicassoDesc);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

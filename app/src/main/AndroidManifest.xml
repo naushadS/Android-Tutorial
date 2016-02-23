@@ -11,8 +11,8 @@
     <!-- External storage write permission -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!-- For downloading images via internet -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- For set user clicked picture as wallpaper -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
     <application
         android:allowBackup="true"
@@ -45,6 +45,7 @@
         <!-- LISTING MENU ACTIVITY -->
         <activity
             android:name=".ListingMenu"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.LISTINGMENU" />
@@ -56,6 +57,7 @@
         <!-- STARTING POINT ACTIVITY -->
         <activity
             android:name=".startingPoint"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.STARTINGPOINT" />
@@ -67,6 +69,7 @@
         <!-- WEBVIEW ACTIVITY -->
         <activity
             android:name=".webView"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.WEBVIEW" />
@@ -78,6 +81,7 @@
         <!-- Chrome Custom Tab ACTIVITY -->
         <activity
             android:name=".chromeCustomTabActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.CHROMECUSTOMTABACTIVITY" />
@@ -100,6 +104,7 @@
         <!-- Text Play ACTIVITY -->
         <activity
             android:name=".TextPlay"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.TEXTPLAY" />
@@ -111,6 +116,7 @@
         <!-- Image Capture ACTIVITY -->
         <activity
             android:name=".camera"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
@@ -123,6 +129,7 @@
         <!-- Change Background ACTIVITY -->
         <activity
             android:name=".changeBackground"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.CHANGEBACKGROUND" />
@@ -134,8 +141,8 @@
         <!-- picassoLibrary ACTIVITY -->
         <activity
             android:name=".picassoLibrary"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.PICASSOLIBRARY" />
 
@@ -146,6 +153,7 @@
         <!-- Email Dev ACTIVITY -->
         <activity
             android:name=".Email_Dev"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.EMAIL_DEV" />
@@ -154,6 +162,17 @@
             </intent-filter>
         </activity>
 
+        <!-- Set Wallpaper ACTIVITY -->
+        <activity
+            android:name=".setWallpaper"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+               <action android:name="in.naushad.androidtutorial.SETWALLPAPER" />
+
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
     </application>
 

@@ -2,6 +2,7 @@ package in.naushad.androidtutorial;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -51,6 +52,7 @@ public class camera extends AppCompatActivity {
                     Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     File file = getFile();
                     camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+                    imageView.setBackgroundColor(Color.WHITE);
                     startActivityForResult(camera_intent, CAM_REQUEST);
                 } else {
                     Toast.makeText(camera.this, "Enter the Image Name", Toast.LENGTH_SHORT).show();

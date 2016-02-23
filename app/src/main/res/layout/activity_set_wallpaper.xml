@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clSetWallpaper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.naushad.androidtutorial.setWallpaper">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.naushad.androidtutorial.setWallpaper">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tbSetWallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        app:theme="@style/ToolBarStyle" />
+
+    <ImageView
+        android:id="@+id/ivSetWallpaper"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/md_grey_300"
+        android:layout_below="@+id/tbSetWallpaper"
+         />
+
+    <Button
+        android:id="@+id/btClickPicture"
+        android:text="Click Picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/ivSetWallpaper"/>
+
+    <Button
+        android:id="@+id/btSetWallpaper"
+        android:text="Set Pic as Walllpaper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btClickPicture"
+         />
+
+
+</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
