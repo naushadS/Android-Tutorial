@@ -10,12 +10,16 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
-        versionName '1.02'
+        versionName '2.00'
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
         }
     }
     productFlavors {

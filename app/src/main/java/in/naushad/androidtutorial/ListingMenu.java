@@ -28,8 +28,8 @@ public class ListingMenu extends AppCompatActivity {
 
 
     public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)",
-            "Text Play", "Image Capture", "Change Layout Background", "Email the Developer!","Set a New Wallpaper!",
-            "example9", "example10", "example11", "example12", "example13",
+            "Text Play", "Image Capture", "Change Layout Background", "Picasso Library","Email the Developer!","Set a New Wallpaper!",
+            "example10", "example11", "example12", "example13",
             "example14", "example15", "example16", "example17", "example18",
             "example19", "example20", "example21", "example22", "example23", "example24", "example25",
             "example26", "example27", "example28", "example29", "example30",
