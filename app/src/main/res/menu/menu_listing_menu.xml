@@ -4,4 +4,6 @@
     tools:context="in.naushad.androidtutorial.ListingMenu">
     <item android:id="@+id/action_email_dev" android:title="Email the Dev!"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_about" android:title="About"
+        android:orderInCategory="100" app:showAsAction="never" />
 </menu>

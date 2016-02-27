@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="AppTheme" parent="AppTheme.Base">
     </style>
     <!-- Base application theme. -->
@@ -8,7 +9,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorControlNormal">@color/White</item>
+        <item name="colorControlNormal">@color/md_grey_500</item>
         <item name="actionMenuTextColor">@color/White</item>
         <item name="android:navigationBarColor" tools:targetApi="21">@color/navigationBarColor</item>
     </style>
@@ -18,19 +19,17 @@
         <item name="windowActionBar">false</item>
     </style>
 
-    <!-- <item name="actionOverflowButtonStyle">@style/ActionButtonOverflowStyle</item>
-        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>-->
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+
+    </style>
+
     <style name="ToolBarStyle" parent="AppTheme.Base">
         <item name="android:textColorPrimary">@color/White</item> <!--title color -->
         <item name="android:textColorSecondary">@color/White</item> <!-- subtitle color-->
         <item name="android:textColor">@color/Black</item> <!-- menu item text color -->
+        <item name="colorControlNormal">@color/White</item> <!-- menu items color -->
     </style>
-<!--
-    <style name="Naushad" parent="AppTheme.Base">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    -->
+
 
     <style name="AppTheme.ActionBar" parent="AppTheme">
         <item name="android:textColorPrimary">@color/white</item>

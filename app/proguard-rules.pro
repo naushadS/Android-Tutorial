@@ -19,3 +19,7 @@
 -dontwarn com.squareup.picasso.**
 -dontwarn com.squareup.okhttp.**
 -dontwarn com.google.android.gms.**
+-keep class .R
+-keep class **.R$* {
+    <fields>;
+}

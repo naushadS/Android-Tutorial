@@ -24,17 +24,16 @@
     <string name="text_actionbar_icon_displayed">Actionbar icon</string>
     <string name="text_menu_items_displayed">Menu items</string>
     <string name="text_custom_animations">Custom animations</string>
-    <string-array name="grade_array">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-    </string-array>
+
+    <string name="about">1.This is basically a playground app for personal purpose.
+        \n
+        \n2.Just released and shared for primarily bragging rights and secondarily to inspire others.
+        \n
+        \n3.Does nothing useful(see point 1),so dont pester me with \"whats the use/benefit of this app?\"
+        \n
+        \n4.And now just so i sound professional -
+        \nNo animals were harmed in the making of this app.
+        \n
+        \nCopyright © (2016). All rights reserved.</string>
 
 </resources>

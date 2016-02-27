@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.naushad.androidtutorial.sendBundle">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tbSendBundle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        app:theme="@style/ToolBarStyle"
+        />
+
+
+    <TextView
+        android:id="@+id/tvSendBundle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="String you wannna pass:"
+        android:textSize="25sp"
+        android:layout_below="@id/tbSendBundle"
+        android:layout_marginLeft="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgSelectString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSendBundle"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:id="@+id/rbBread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Bread"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/rbEggs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Eggs"/>
+        <RadioButton
+            android:id="@+id/rbChicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Chicken"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bSendString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send String"
+        android:textSize="20sp"
+        android:layout_below="@+id/rgSelectString"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

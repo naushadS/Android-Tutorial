@@ -25,7 +25,8 @@ public class Splash extends Activity{
                 } catch(InterruptedException e){
                     e.printStackTrace();
                 } finally{
-                    Intent openListingMenu=new Intent("in.naushad.androidtutorial.LISTINGMENU");
+                    Intent openListingMenu=new Intent(Splash.this, ListingMenu.class);
+                    //Intent openListingMenu=new Intent("in.naushad.androidtutorial.LISTINGMENU");
                   startActivity(openListingMenu);
 
                 }

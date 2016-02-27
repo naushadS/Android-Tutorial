@@ -1,7 +1,6 @@
 package in.naushad.androidtutorial;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,11 +13,12 @@ import android.widget.ListView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.holder.BadgeStyle;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
@@ -29,7 +29,7 @@ public class ListingMenu extends AppCompatActivity {
 
     public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)",
             "Text Play", "Image Capture", "Change Layout Background", "Picasso Library","Email the Developer!","Set a New Wallpaper!",
-            "example10", "example11", "example12", "example13",
+            "Pass String between Activities", "example11", "example12", "example13",
             "example14", "example15", "example16", "example17", "example18",
             "example19", "example20", "example21", "example22", "example23", "example24", "example25",
             "example26", "example27", "example28", "example29", "example30",
@@ -74,13 +74,30 @@ public class ListingMenu extends AppCompatActivity {
                                     .withEmail("naushadshukoor@gmail.com")
                                     .withIcon(getResources().getDrawable(R.drawable.profile3))
                     )
-                    .addProfiles(
-                            new ProfileDrawerItem()
-                                    .withName("Bruce Wayne")
-                                    .withEmail("brucewayne@gmail.com")
-                                    .withIcon(getResources().getDrawable(R.drawable.profile3))
-                    )
+                    .withSelectionListEnabled(false)
+                    .withProfileImagesClickable(false)
                     .build();
+
+
+        final PrimaryDrawerItem email = new PrimaryDrawerItem()
+                .withIcon(MaterialDesignIconic.Icon.gmi_email_open)
+                .withName("Email the Developer!")
+                .withDescription("Send a pre-formatted mail")
+                .withIdentifier(1)
+                //.withBadge("1")
+                //.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.Black))
+                .withSelectable(false);
+
+        final PrimaryDrawerItem about = new PrimaryDrawerItem()
+                .withIcon(MaterialDesignIconic.Icon.gmi_info)
+                .withName("About")
+                .withDescription("Get a brief idea about this app")
+                .withIdentifier(2)
+                //.withBadge("2")
+                //.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.Black))
+                .withSelectable(false);
+
+        final DividerDrawerItem divider = new DividerDrawerItem();
 
             //Material Drawer for listing menu activity
             result = new DrawerBuilder()
@@ -89,28 +106,21 @@ public class ListingMenu extends AppCompatActivity {
                     .withTranslucentStatusBar(true)
                     .withTranslucentNavigationBar(false)
                     .withFullscreen(false)
+                    //.withSliderBackgroundColor(getResources().getColor(R.color.material_drawer_dark_background))
                     .withSelectedItem(-1)
                     .withActionBarDrawerToggle(true)
                     .withAccountHeader(headerResult)
-                    .addDrawerItems(
-                            new PrimaryDrawerItem()
-                                    .withIcon(R.drawable.email)
-                                    .withName("Email the Developer!")
-                                    .withDescription("Send a pre-formatted mail")
-                                    .withBadge("1")
-                                    .withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.Black))
-                                    .withIdentifier(1)
-                                    .withSelectable(false)
-
-                    )
+                    .addDrawerItems(email,divider,about)
                     .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                         @Override
                         public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                             if (drawerItem != null) {
                                 drawerintent = null;
-                            }
-                            if (drawerItem.getIdentifier() == 1) {
-                                drawerintent = new Intent(ListingMenu.this, Email_Dev.class);
+                                if (drawerItem.getIdentifier() == 1) {
+                                    drawerintent = new Intent(ListingMenu.this, Email_Dev.class);
+                                } else if (drawerItem.getIdentifier() == 2) {
+                                    drawerintent = new Intent(ListingMenu.this, about.class);
+                                }
                             }
                             if (drawerintent != null) {
                                 startActivity(drawerintent);
@@ -172,6 +182,9 @@ public class ListingMenu extends AppCompatActivity {
                         case "Set a New Wallpaper!":
                             cheese = "setWallpaper";
                             break;
+                        case "Pass String between Activities":
+                            cheese = "sendBundle";
+                            break;
                     }
 
                     //redirecting the registered click by user to the appropriate class
@@ -219,6 +232,11 @@ public class ListingMenu extends AppCompatActivity {
             case R.id.action_email_dev:
                 Intent emaildevintent = new Intent(ListingMenu.this, Email_Dev.class);
                 startActivity(emaildevintent);
+                return true;
+
+            case R.id.action_about:
+                Intent about = new Intent(ListingMenu.this, about.class);
+                startActivity(about);
                 return true;
 
             default:

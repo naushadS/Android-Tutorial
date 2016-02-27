@@ -168,12 +168,47 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-               <action android:name="in.naushad.androidtutorial.SETWALLPAPER" />
+                <action android:name="in.naushad.androidtutorial.SETWALLPAPER" />
 
-               <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
+        <!-- About ACTIVITY -->
+        <activity
+            android:name=".about"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.ABOUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- sendBundle ACTIVITY -->
+        <activity
+            android:name=".sendBundle"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                      <action android:name="in.naushad.androidtutorial.SENDBUNDLE" />
+
+                      <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- receiveBundle ACTIVITY -->
+        <activity
+            android:name=".receiveBundle"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.RECEIVEBUNDLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
