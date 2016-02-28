@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="General"
+        android:key="general">
+        <EditTextPreference
+            android:title="Name:"
+            android:key="user_name"
+            android:summary="Enter your Name"
+            android:inputType="textPersonName"
+            />
+        <EditTextPreference
+            android:title="Email ID:"
+            android:key="user_email"
+            android:summary="Enter your Email Address"
+            android:inputType="textEmailAddress"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Splash Screen"
+        android:key="splash_screen">
+        <CheckBoxPreference
+            android:title="Enable Splash Screen"
+            android:key="splash_screen_enabled"
+            android:defaultValue="true" />
+        <CheckBoxPreference
+            android:title="Enable Splash Song"
+            android:key="splash_music_enabled"
+            android:dependency="splash_screen_enabled"
+            android:defaultValue="false"
+            android:summary="Wanna hear song on splash screen?" />
+        <ListPreference
+            android:title="Splash Screen Duration"
+            android:key="splash_screen_duration"
+            android:summary="Time for which the splash screen will be displayed"
+            android:dependency="splash_screen_enabled"
+            android:entries="@array/splash_screen_duration_list"
+            android:entryValues="@array/splash_screen_duration_listValues"/>
+    </PreferenceCategory>
+</PreferenceScreen>
