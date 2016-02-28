@@ -1,7 +1,9 @@
 package in.naushad.androidtutorial;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -29,11 +31,7 @@ public class ListingMenu extends AppCompatActivity {
 
     public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)",
             "Text Play", "Image Capture", "Change Layout Background", "Picasso Library","Email the Developer!","Set a New Wallpaper!",
-            "Pass String between Activities", "example11", "example12", "example13",
-            "example14", "example15", "example16", "example17", "example18",
-            "example19", "example20", "example21", "example22", "example23", "example24", "example25",
-            "example26", "example27", "example28", "example29", "example30",
-            "example31", "example32"};
+            "Pass String between Activities","Settings"};
     ListView lvListingMenu;
     Toolbar tbListingMenu;
     private Intent drawerintent = null;
@@ -64,14 +62,19 @@ public class ListingMenu extends AppCompatActivity {
             //result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
 
 
+             SharedPreferences getPrefs=PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+             String user_name = getPrefs.getString("user_name", "Naushad Shukoor");
+             String user_email = getPrefs.getString("user_email", "naushadshukoor@gmail.com");
+
+
             //Account Header for Material Drawer
             headerResult = new AccountHeaderBuilder()
                     .withActivity(this)
                     .withHeaderBackground(R.drawable.header)
                     .addProfiles(
                             new ProfileDrawerItem()
-                                    .withName("Naushad Shukoor")
-                                    .withEmail("naushadshukoor@gmail.com")
+                                    .withName(user_name)
+                                    .withEmail(user_email)
                                     .withIcon(getResources().getDrawable(R.drawable.profile3))
                     )
                     .withSelectionListEnabled(false)
@@ -88,11 +91,19 @@ public class ListingMenu extends AppCompatActivity {
                 //.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.Black))
                 .withSelectable(false);
 
+        final PrimaryDrawerItem settings = new PrimaryDrawerItem()
+                .withIcon(MaterialDesignIconic.Icon.gmi_settings)
+                .withName("Settings")
+                .withIdentifier(2)
+                        //.withBadge("2")
+                        //.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.Black))
+                .withSelectable(false);
+
         final PrimaryDrawerItem about = new PrimaryDrawerItem()
                 .withIcon(MaterialDesignIconic.Icon.gmi_info)
                 .withName("About")
                 .withDescription("Get a brief idea about this app")
-                .withIdentifier(2)
+                .withIdentifier(3)
                 //.withBadge("2")
                 //.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.Black))
                 .withSelectable(false);
@@ -110,7 +121,7 @@ public class ListingMenu extends AppCompatActivity {
                     .withSelectedItem(-1)
                     .withActionBarDrawerToggle(true)
                     .withAccountHeader(headerResult)
-                    .addDrawerItems(email,divider,about)
+                    .addDrawerItems(email,divider,settings,about)
                     .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                         @Override
                         public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
@@ -119,6 +130,8 @@ public class ListingMenu extends AppCompatActivity {
                                 if (drawerItem.getIdentifier() == 1) {
                                     drawerintent = new Intent(ListingMenu.this, Email_Dev.class);
                                 } else if (drawerItem.getIdentifier() == 2) {
+                                    drawerintent = new Intent(ListingMenu.this, settings.class);
+                                }else if (drawerItem.getIdentifier() == 3) {
                                     drawerintent = new Intent(ListingMenu.this, about.class);
                                 }
                             }
@@ -185,6 +198,9 @@ public class ListingMenu extends AppCompatActivity {
                         case "Pass String between Activities":
                             cheese = "sendBundle";
                             break;
+                        case "Settings":
+                            cheese= "settings";
+                            break;
                     }
 
                     //redirecting the registered click by user to the appropriate class
@@ -230,13 +246,19 @@ public class ListingMenu extends AppCompatActivity {
                 return true;
 
             case R.id.action_email_dev:
-                Intent emaildevintent = new Intent(ListingMenu.this, Email_Dev.class);
-                startActivity(emaildevintent);
+                startActivity( new Intent(ListingMenu.this, Email_Dev.class));
+                return true;
+
+            case R.id.action_settings:
+                startActivity(new Intent(ListingMenu.this, settings.class));
                 return true;
 
             case R.id.action_about:
-                Intent about = new Intent(ListingMenu.this, about.class);
-                startActivity(about);
+                startActivity(new Intent(ListingMenu.this, about.class));
+                return true;
+
+            case R.id.action_exit:
+                finish();
                 return true;
 
             default:

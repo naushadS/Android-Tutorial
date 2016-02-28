@@ -35,5 +35,6 @@
         \nNo animals were harmed in the making of this app.
         \n
         \nCopyright © (2016). All rights reserved.</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

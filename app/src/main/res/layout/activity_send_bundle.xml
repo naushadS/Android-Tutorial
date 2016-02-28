@@ -43,19 +43,24 @@
             android:textSize="20sp"
             android:text="Bread"
             android:checked="true"
+            android:theme="@style/MyRadioButton"
             />
         <RadioButton
             android:id="@+id/rbEggs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Eggs"/>
+            android:text="Eggs"
+            android:theme="@style/MyRadioButton"
+            />
         <RadioButton
             android:id="@+id/rbChicken"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Chicken"/>
+            android:text="Chicken"
+            android:theme="@style/MyRadioButton"
+            />
 
     </RadioGroup>
 

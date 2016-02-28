@@ -192,9 +192,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                      <action android:name="in.naushad.androidtutorial.SENDBUNDLE" />
+                <action android:name="in.naushad.androidtutorial.SENDBUNDLE" />
 
-                      <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -205,6 +205,19 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.RECEIVEBUNDLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- SETTINGS ACTIVITY -->
+        <activity
+            android:name=".settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Settings">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.SETTINGS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

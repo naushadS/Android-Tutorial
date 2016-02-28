@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
- <style name="AppTheme" parent="AppTheme.Base">
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="AppTheme.Base">
 
-    <item name="android:colorPrimary">@color/colorPrimary</item>
-    <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
-    <item name="android:colorAccent">@color/colorAccent</item>
-    <item name="android:navigationBarColor">@color/navigationBarColor</item>
-</style>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorControlNormal">@color/White</item>
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
+    </style>
+
+
+    <style name="AppTheme.Settings">
+
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorControlNormal">@color/md_indigo_500</item> <!-- change -->
+        <item name="subtitleTextColor" tools:targetApi="21">@color/White</item>
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
+    </style>
 
     <style name="AppTheme.NoActionBar" parent="AppTheme.Base">
         <item name="windowNoTitle">true</item>
@@ -17,5 +29,22 @@
         <item name="android:textColorPrimary">@color/White</item> <!--title color -->
         <item name="android:textColorSecondary">@color/White</item> <!-- subtitle color-->
         <item name="android:textColor">@color/Black</item> <!-- menu item text color -->
-     </style>
+    </style>
+    <style name="CheckBoxStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:checked">true</item>
+    </style>
+
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlNormal">@color/md_indigo_500</item>
+        <item name="android:colorControlActivated">@color/md_pink_500</item>
+    </style>
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlNormal">@color/md_indigo_500</item>
+        <item name="android:colorControlActivated">@color/md_pink_500</item>
+    </style>
 </resources>

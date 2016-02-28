@@ -36,6 +36,11 @@ public class Email_Dev extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 convertEditTextVarsToStrings();
+
+                if(EmailAddressCC.length()==0 || Introduction.length()==0 || Improvements.length()==0 || NewFeature.length()==0){
+                    Toast.makeText(Email_Dev.this,"Please fill in all the fields",Toast.LENGTH_SHORT).show();
+                } else{
+
                 String RecipientEmailAddress="naushadshukoor@gmail.com";
                 String EmailAddressCCs[]={EmailAddressCC};
                 String Message="Hey Naushad,"
@@ -59,6 +64,7 @@ public class Email_Dev extends AppCompatActivity {
                 catch(ActivityNotFoundException e){
                     Toast.makeText(Email_Dev.this,"No Email Clients installed",Toast.LENGTH_SHORT).show();
                 }
+            }
             }
         });
     }
