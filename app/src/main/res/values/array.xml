@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="splash_screen_duration_list">
+        <item>Half a second</item>
+        <item>2 second</item>
+        <item>5 second</item>
+        <item>10 second</item>
+    </string-array>
+
+    <string-array name="splash_screen_duration_listValues">
+        <item>500</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+    </string-array>
+    
+</resources>
