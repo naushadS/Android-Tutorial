@@ -3,6 +3,7 @@ package in.naushad.androidtutorial;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
 public class startingPoint extends AppCompatActivity{
-    TextView tvDisplay;
+    TextView tvDisplay,tvTest;
     Button bAdd, bSub;
     Toolbar tbStartingPoint;
     int counter;
@@ -30,6 +31,9 @@ public class startingPoint extends AppCompatActivity{
         tvDisplay = (TextView) findViewById(R.id.tvDisplay);
         bAdd = (Button) findViewById(R.id.bAdd);
         bSub = (Button) findViewById(R.id.bSub);
+        tvTest = (TextView) findViewById(R.id.tvTest);
+        //tvTest.setMovementMethod(LinkMovementMethod.getInstance());
+        Linkify.addLinks(tvTest,Linkify.ALL);
 
         setSupportActionBar(tbStartingPoint);
         getSupportActionBar().setTitle("Incrementor/Decrementor");

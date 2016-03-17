@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context="in.naushad.androidtutorial.earthquakeResistentStructure">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- A CardView that contains a TextView -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cvEarthQuakeResistance1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="10dip"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardBackgroundColor="#fbef0a">
+
+                <TextView
+                    android:id="@+id/tvEarthQuakeResistance1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:text="@string/EarthQuake_Resistance1"
+                    android:textStyle="normal"
+                    android:textSize="15sp"/>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cvEarthQuakeResistance2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="10dip"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardBackgroundColor="#fbef0a">
+
+                <TextView
+                    android:id="@+id/tvEarthQuakeResistance2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:text="@string/EarthQuake_Resistance2"
+                    android:textStyle="normal"
+                    android:textSize="15sp"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cvEarthQuakeResistance3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="10dip"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardBackgroundColor="#fbef0a">
+
+                <TextView
+                    android:id="@+id/tvEarthQuakeResistance3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:text="@string/EarthQuake_Resistance3"
+                    android:textStyle="normal"
+                    android:textSize="15sp"/>
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+

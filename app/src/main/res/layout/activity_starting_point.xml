@@ -51,4 +51,14 @@
         android:gravity="center"
         android:textColor="@color/Light_Grey"/>
 
+    <TextView android:text="@string/testURL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTest"
+        android:textSize="20sp"
+        android:textColor="@color/Grey"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/bSub"
+        />
+
 </RelativeLayout>

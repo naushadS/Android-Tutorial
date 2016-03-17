@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context="in.naushad.androidtutorial.selfProtection">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- A CardView that contains a TextView -->
+<android.support.v7.widget.CardView
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+android:id="@+id/cvIndoors"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+card_view:cardCornerRadius="4dp"
+card_view:cardElevation="10dip"
+card_view:cardUseCompatPadding="true"
+card_view:cardBackgroundColor="#fbef0a">
+
+<TextView
+    android:id="@+id/tvIndoors"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:text="@string/EarthQuake_Indoors"
+    android:textStyle="normal"
+    android:textSize="15sp"/>
+</android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvInbed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="10dip"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="#fbef0a">
+
+        <TextView
+            android:id="@+id/tvInbed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:text="@string/EarthQuake_InBed"
+            android:textStyle="normal"
+            android:textSize="15sp"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvInwheelchair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="10dip"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="#fbef0a">
+
+        <TextView
+            android:id="@+id/tvInwheelchair"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:text="@string/EarthQuake_Inwheelchair"
+            android:textStyle="normal"
+            android:textSize="15sp"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvOutdoors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="10dip"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="#fbef0a">
+
+        <TextView
+            android:id="@+id/tvOutdoors"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:text="@string/EarthQuake_Outdoors"
+            android:textStyle="normal"
+            android:textSize="15sp"/>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvDriving"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="10dip"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="#fbef0a">
+
+        <TextView
+            android:id="@+id/tvDriving"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:text="@string/EarthQuake_Driving"
+            android:textStyle="normal"
+            android:textSize="15sp"/>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvStadium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="10dip"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="#fbef0a">
+
+        <TextView
+            android:id="@+id/tvStadium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:text="@string/EarthQuake_Stadium"
+            android:textStyle="normal"
+            android:textSize="15sp"/>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
+</ScrollView>
+
+</LinearLayout>
+
+

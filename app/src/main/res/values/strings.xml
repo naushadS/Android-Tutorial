@@ -37,4 +37,74 @@
         \nCopyright © (2016). All rights reserved.</string>
     <string name="title_activity_settings">Settings</string>
 
+    <string name="EarthQuake_Indoors">
+    <b>Indoors:</b>
+        \n
+    \n1.Drop to the floor, take cover under a sturdy desk or table, and hold on to it firmly.
+    \n2.Be prepared to move with it until the shaking stops.
+    \n3.If you are not near a desk or table, drop to the floor against the interior wall and protect your head and neck with your arms.
+    \n4.Avoid exterior walls, windows, hanging objects, mirrors, tall furniture, large appliances, and kitchen cabinets with heavy objects or glass.
+    \n5.Do not go outside!
+</string>
+    <string name="EarthQuake_InBed">
+    <b>In bed:</b>
+        \n
+        \n1.If you are in bed, hold on and stay there, protecting your head with a pillow.
+        \n2.You are less likely to be injured staying where you are.
+        \n3.Broken glass on the floor has caused injury to those who have rolled to the floor or tried to get to doorways.
+</string>
+    <string name="EarthQuake_Inwheelchair">
+        <b>In a wheelchair:</b>
+        \n
+        \n1.Lock the wheels once you are in a safe position.
+       \n2.If unable to move quickly, stay where you are.
+       \n3.Cover your head and neck with your arms.
+    </string>
+    <string name="EarthQuake_Outdoors">
+    <b>Outdoors:</b>
+        \n
+        \n1.Move to a clear area
+        \n2.if you can safely do so; avoid power lines, trees, signs, buildings, vehicles, and other hazards.
+</string>
+    <string name="EarthQuake_Driving">
+        <b>Driving:</b>
+        \n
+        \n1.Pull over to the side of the road, stop, and set the parking brake.
+        \n2.Avoid overpasses, bridges, power lines, signs and other hazards.
+        \n3.Stay inside the vehicle until the shaking is over.
+        \n4.If a power line falls on the car, stay inside until a trained person removes the wire.
+    </string>
+    <string name="EarthQuake_Stadium">
+       <b> In a stadium or theater:</b>
+        \n
+        \n1.Stay at your seat and protect your head and neck with your arms.
+        \n2.Don\'t try to leave until the shaking is over.
+        \n3.Then walk out slowly watching for anything that could fall in the aftershocks.
+    </string>
+<string name="EarthQuake_Resistance1">
+    <b>Reduce Load</b>
+    \n
+    \n1.To be earthquake proof, buildings, structures and their foundations need to be built to be resistant to sideways loads.
+    \n2.The lighter the building is, the less the loads.
+    \n3.This is particularly so when the weight is higher up.
+    \n4.Where possible the roof should be of light-weight material.
+    \n5.If there are floors and walls and partitions, the lighter these are the better, too.
+    </string>
+    <string name="EarthQuake_Resistance2">
+     <b>Incorporating Base Isolation</b>
+        \n
+        \n1.As the buildings get bigger and taller other techniques are employed such as \“base isolation.\”
+        \n2.During the past 30 years, engineers have constructed skyscrapers that float on systems of ball bearings, springs and padded cylinders.
+        \n3.Acting like shock absorbers in a car, these systems allow the building to be decoupled from the shaking of the ground.
+    </string>
+    <string name="EarthQuake_Resistance3">
+    <b>Avoid Reinforced brick or Concrete Block</b>
+        \n
+        \n1.The most dangerous building construction, from an earthquake point of view, is unreinforced brick or concrete block.
+        \n2.Generally, this type of construction has walls that are made of bricks stacked on top of each other and held together with mortar.
+        \n3.The roof is laid across the top.
+        \n4.The weight of the roof is carried straight down through the wall to the foundation.
+        \n5.When this type of construction is subject to a lateral force from an earthquake the walls tip over or crumble and the roof falls in like a house of cards.
+    </string>
+    <string name="testURL">http://www.google.com</string>
 </resources>

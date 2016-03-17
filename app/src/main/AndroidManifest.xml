@@ -210,7 +210,6 @@
             </intent-filter>
         </activity>
 
-
         <!-- SETTINGS ACTIVITY -->
         <activity
             android:name=".settings"
@@ -218,6 +217,17 @@
             android:theme="@style/AppTheme.Settings">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".selfProtection" />
+        <activity android:name=".earthquakeResistentStructure" />
+        <activity
+            android:name=".bookDetails">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.BOOKDETAILS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFBB00"
+    android:layout_centerHorizontal="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="ID:db123"
+        android:id="@+id/tvBookID"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:id="@+id/ivBookImage"
+        android:contentDescription="Book Image"
+        android:background="@color/md_grey_400"
+        android:layout_below="@id/tvBookID"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Title of Book"
+        android:id="@+id/tvBookTitle"
+        android:layout_toRightOf="@+id/ivBookImage"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Author Name"
+        android:id="@+id/tvAuthor"
+        android:layout_below="@+id/tvBookTitle"
+        android:layout_toRightOf="@+id/ivBookImage"
+        android:layout_toEndOf="@+id/ivBookImage"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Edition:2nd"
+        android:id="@+id/tvBookEdition"
+        android:layout_below="@+id/tvAuthor"
+        android:layout_toRightOf="@+id/ivBookImage"
+        android:layout_toEndOf="@+id/ivBookImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Publication:Sheth"
+        android:id="@+id/tvBookPublication"
+        android:layout_below="@+id/tvBookEdition"
+        android:layout_toRightOf="@+id/ivBookImage"
+        android:layout_toEndOf="@+id/ivBookImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Standard Number:1234567890"
+        android:id="@+id/tvBookStandardNumber"
+        android:layout_below="@+id/tvBookPublication"
+        android:layout_toRightOf="@+id/ivBookImage"
+        android:layout_toEndOf="@+id/ivBookImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Keywords: keyword1,Keyword2"
+        android:id="@+id/tvBookKeywords"
+        android:layout_below="@+id/tvBookStandardNumber"
+        android:layout_toRightOf="@+id/ivBookImage"
+        android:layout_toEndOf="@+id/ivBookImage" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add to Basket"
+        android:id="@+id/bAddToBasket"
+        android:layout_below="@+id/tvBookKeywords"
+        android:layout_toRightOf="@+id/ivBookImage"
+        android:layout_toEndOf="@+id/ivBookImage"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="In Basket"
+        android:id="@+id/cbInBasket"
+        android:layout_toRightOf="@+id/bAddToBasket"
+        android:layout_alignBottom="@+id/bAddToBasket" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFBB00"
+    android:layout_centerHorizontal="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Circulation:"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:id="@+id/tvBookCirculation"
+        />
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBookCirculation"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+        <TableRow android:layout_height="5px" android:background="#000000">
+            <TextView android:layout_span="2" android:layout_height="1px"
+                android:layout_width="fill_parent" android:text="">
+            </TextView></TableRow>
+        <TableRow>
+           <TextView android:text="Accession#"/>
+            <TextView android:text="Call#"/>
+            <TextView android:text="Current Location"/>
+            <TextView android:text="Status"/>
+            <TextView android:text="Policy"/>
+        </TableRow>
+        <TableRow android:layout_height="5px" android:background="#000000">
+            <TextView android:layout_span="2" android:layout_height="1px"
+                android:layout_width="fill_parent" android:text="">
+            </TextView></TableRow>
+        <TableRow>
+        <TextView android:text="123"/>
+        <TextView android:text="5156"/>
+        <TextView android:text="Main"/>
+        <TextView android:text="On Shelf"/>
+        <TextView android:text="General"/>
+    </TableRow>
+        <TableRow>
+        <TextView android:text="654"/>
+        <TextView android:text="6555"/>
+        <TextView android:text="Main"/>
+        <TextView android:text="On Shelf"/>
+        <TextView android:text="Faculty Only"/>
+    </TableRow>
+        <TableRow>
+            <TextView android:text="655"/>
+            <TextView android:text="6955"/>
+            <TextView android:text="Main"/>
+            <TextView android:text="Inside Locker"/>
+            <TextView android:text="Confidential"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
