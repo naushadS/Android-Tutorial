@@ -31,7 +31,7 @@ public class ListingMenu extends AppCompatActivity {
 
     public String classes[] = {"Incrementor/Decrementor", "Android Police (Web View)", "Android Police (Chrome Custom Tab)",
             "Text Play", "Image Capture", "Change Layout Background", "Picasso Library","Email the Developer!","Set a New Wallpaper!",
-            "Pass String between Activities","Settings", "selfProtection","earthquakeResistentStructure","bookDetails"};
+            "Pass String between Activities","Settings", "selfProtection","earthquakeResistentStructure","bookDetails","splitter"};
     ListView lvListingMenu;
     Toolbar tbListingMenu;
     private Intent drawerintent = null;

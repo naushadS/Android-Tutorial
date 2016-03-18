@@ -221,17 +221,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".selfProtection" />
         <activity android:name=".earthquakeResistentStructure" />
-        <activity
-            android:name=".bookDetails">
+        <activity android:name=".bookDetails">
             <intent-filter>
                 <action android:name="in.naushad.androidtutorial.BOOKDETAILS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="splitter"></activity>
     </application>
 
 </manifest>
