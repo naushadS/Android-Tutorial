@@ -9,7 +9,6 @@
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
     </style>
 
-
     <style name="AppTheme.Settings">
 
         <item name="android:colorPrimary">@color/colorPrimary</item>

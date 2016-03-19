@@ -230,7 +230,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="splitter"></activity>
+        <activity android:name="splitter"
+            android:theme="@style/AppTheme.DayNight"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="in.naushad.androidtutorial.SPLITTER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

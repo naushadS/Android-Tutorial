@@ -2,8 +2,10 @@ package in.naushad.androidtutorial;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -18,6 +20,9 @@ public class splitter extends AppCompatActivity {
     float BillAmount=0;
     float IndividualShare=0;
 
+    static{
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +34,7 @@ public class splitter extends AppCompatActivity {
         {
             Toast.makeText(splitter.this,"Enter the bill amount!",Toast.LENGTH_SHORT).show();
             sbNoPeople.setEnabled(false);
-            sbNoPeople.setProgress(0);
+            sbNoPeople.setProgress(1);
         }
         etBillValue.addTextChangedListener(new TextWatcher() {
 
@@ -76,8 +81,16 @@ public class splitter extends AppCompatActivity {
                     IndividualShare = BillAmount / sbNoPeople.getProgress();
                     tvIndividualAmount.setText("Rs." + String.format("%.2f", IndividualShare));
                 }catch (NumberFormatException ne){
-                    tvIndividualAmount.setText("Pehle khana manga :P");
+                    tvIndividualAmount.setText("");
                 }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_splitter, menu);
+        return true;
     }
 
     @Override
@@ -87,9 +100,16 @@ public class splitter extends AppCompatActivity {
             case android.R.id.home:
                 onBackPressed();
                 return true;
+            case R.id.action_night_theme_off:
+                getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                recreate();
+                return true;
+            case R.id.action_night_theme_on:
+                getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                recreate();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

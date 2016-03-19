@@ -14,8 +14,19 @@
         <item name="android:navigationBarColor" tools:targetApi="21">@color/navigationBarColor</item>
     </style>
 
+        <style name="AppTheme.DayNight" parent="Theme.AppCompat.DayNight.DarkActionBar">
+
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+            <item name="android:colorPrimary" tools:targetApi="21">@color/colorPrimary</item>
+            <item name="android:colorPrimaryDark" tools:targetApi="21">@color/colorPrimaryDark</item>
+            <item name="android:colorAccent" tools:targetApi="21">@color/colorAccent</item>
+        </style>
+
     <!-- Base Settings theme. -->
     <style name="AppTheme.Settings" parent="Theme.AppCompat.Light.DarkActionBar">
+
 
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
