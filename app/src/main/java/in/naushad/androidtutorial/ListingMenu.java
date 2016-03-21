@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -34,20 +35,25 @@ public class ListingMenu extends AppCompatActivity {
             "Pass String between Activities","Settings", "selfProtection","earthquakeResistentStructure","bookDetails","splitter"};
     ListView lvListingMenu;
     Toolbar tbListingMenu;
+    Toast ExitToast;
     private Intent drawerintent = null;
-    private Drawer result = null;
+    public Drawer result = null;
     private AccountHeader headerResult = null;
+    private static final int TIME_INTERVAL = 2000;
+    private long mBackPressed;
+    private ProfileDrawerItem mainProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listing_menu);
 
-
         tbListingMenu = (Toolbar) findViewById(R.id.tbListingMenu);
         setSupportActionBar(tbListingMenu);
         getSupportActionBar().setTitle("List Of Options");
         getSupportActionBar().setSubtitle("Select One Already !");
+        ExitToast = Toast.makeText(getBaseContext(), "Tap Again to Exit", Toast.LENGTH_SHORT);
+
 
         /*
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -72,7 +78,7 @@ public class ListingMenu extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header)
                 .addProfiles(
-                        new ProfileDrawerItem()
+                        mainProfile=new ProfileDrawerItem()
                                 .withName(user_name)
                                 .withEmail(user_email)
                                 .withIcon(getResources().getDrawable(R.drawable.profile3))
@@ -121,7 +127,7 @@ public class ListingMenu extends AppCompatActivity {
                 .withSelectedItem(-1)
                 .withActionBarDrawerToggle(true)
                 .withAccountHeader(headerResult)
-                .addDrawerItems(email,divider,settings,about)
+                .addDrawerItems(email, divider, settings, about)
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
@@ -131,7 +137,7 @@ public class ListingMenu extends AppCompatActivity {
                                 drawerintent = new Intent(ListingMenu.this, Email_Dev.class);
                             } else if (drawerItem.getIdentifier() == 2) {
                                 drawerintent = new Intent(ListingMenu.this, settings.class);
-                            }else if (drawerItem.getIdentifier() == 3) {
+                            } else if (drawerItem.getIdentifier() == 3) {
                                 drawerintent = new Intent(ListingMenu.this, about.class);
                             }
                         }
@@ -140,8 +146,7 @@ public class ListingMenu extends AppCompatActivity {
                         }
                         return false;
                     }
-                })
-                .build();
+                }).build();
 
 
         // Loading the banner ad in listing menu
@@ -149,7 +154,7 @@ public class ListingMenu extends AppCompatActivity {
         AdRequest adRequestListingMenu = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)        // All emulators
                 .addTestDevice("A851D03B6D976CAA2BDAABFC232841DC")  // My Xiaomi Redmi 1s test phone
-                        //.addTestDevice("") //add the tablet as well later
+                .addTestDevice("0BCA7BDB8AE649D01EE271E0F9A34C19") //Nexus 7
                 .build();
         avListingMenu.loadAd(adRequestListingMenu);
 
@@ -223,7 +228,17 @@ public class ListingMenu extends AppCompatActivity {
         if (result != null && result.isDrawerOpen()) {
             result.closeDrawer();
         } else {
-            super.onBackPressed();
+            if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
+            {
+                ExitToast.cancel();
+                super.onBackPressed();
+                return;
+
+            }
+            else {
+                ExitToast.show();
+            }
+            mBackPressed = System.currentTimeMillis();
         }
     }
 

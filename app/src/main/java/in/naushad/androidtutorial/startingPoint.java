@@ -88,7 +88,8 @@ public class startingPoint extends AppCompatActivity{
     public void requestNewInterstitial(){
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("A851D03B6D976CAA2BDAABFC232841DC")
+                .addTestDevice("A851D03B6D976CAA2BDAABFC232841DC") //Redmi 1s
+                .addTestDevice("0BCA7BDB8AE649D01EE271E0F9A34C19") //Nexus 7
                 .build();
 
         // Load the adView object with the request
